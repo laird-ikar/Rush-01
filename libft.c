@@ -6,14 +6,22 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 15:30:37 by bguyot            #+#    #+#             */
-/*   Updated: 2022/07/19 16:20:06 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/07/19 16:28:15 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "functions.h"
 
-size_t	ft_strlen(const char *str);
+int	ft_isspace(char c)
+{
+	return (c == ' '
+		|| c == '\n'
+		|| c == '\f'
+		|| c == '\r'
+		|| c == '\t'
+		|| c == '\v');
+}
 
 void	ft_putstr(char *s)
 {
