@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   put.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 15:13:20 by bguyot            #+#    #+#             */
-/*   Updated: 2022/07/19 16:50:18 by bguyot           ###   ########.fr       */
+/*   Created: 2022/07/19 16:47:30 by bguyot            #+#    #+#             */
+/*   Updated: 2022/07/19 16:49:10 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
 #include "functions.h"
 
-int	main(int argc, char *argv[])
+void	ft_putnbr(int nb)
 {
-	t_data	data;
-
-	if (argc != 2 || parse_arg(argv[1], &data) < 0)
+	if (nb < 0)
 	{
-		ft_putstr("Error\n");
-		return (1);
+		write(1, "-", 1);
+		if (nb <= -10)
+			ft_putnbr(nb / -10);
+		ft_putnbr((-1 * (nb % 10)) + '0');
 	}
-	return (0);
+	else if (nb >= 10)
+		ft_putnbr(nb / 10);
+	if (nb >= 0)
+		ft_putchar(nb % 10 + '0');
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *s)
+{
+	if (!s)
+		return ;
+	write(1, s, ft_strlen(s));
 }

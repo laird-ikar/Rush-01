@@ -6,7 +6,7 @@
 /*   By: bguyot <bguyot@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 16:01:51 by bguyot            #+#    #+#             */
-/*   Updated: 2022/07/19 16:35:07 by bguyot           ###   ########.fr       */
+/*   Updated: 2022/07/19 16:48:42 by bguyot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int	parse_arg(char *arg, t_data *data)
 	data->rowright[1] = ft_atoi(split[13]);
 	data->rowright[2] = ft_atoi(split[14]);
 	data->rowright[3] = ft_atoi(split[15]);
+	ft_splitfree(split);
 	return (0);
-	(void) data; //TODO: remove
 }
